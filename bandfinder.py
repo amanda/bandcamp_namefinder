@@ -14,11 +14,11 @@ PASSWORD = os.environ.get('APP_PW')
 
 
 def words_from_file(fname, num):
-	'''(words file, int)
-	--> num of words returned'''
+    '''(words file, int)
+    --> num of words returned'''
     with open(fname) as f:
         wordlist = [w.strip() for w in f.readlines()]  # for sowpods.txt
-    wordlist.shuffle()
+        shuffle(wordlist)
     return [wordlist.pop(_) for _ in range(num)]
 
 
